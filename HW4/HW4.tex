@@ -1,0 +1,943 @@
+\documentclass[11pt]{article}
+%Increase the text height
+\addtolength{\voffset}{-62pt}
+\addtolength{\textheight}{62pt}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%Increase the text width
+\addtolength{\hoffset}{-22pt}
+\addtolength{\oddsidemargin}{-32pt}
+\addtolength{\marginparsep}{-11pt}
+\addtolength{\marginparwidth}{-45pt}
+\addtolength{\textwidth}{110pt}
+
+\begin{document}
+\pagestyle{myheadings}
+\markright{\sc 230201057 Furkan Emre YILMAZ%
+\hfill Math 144 HW04 /p.}
+
+\paragraph{Q1.} Let
+$
+V= \{ (x_1,x_2) | x_1,x_2 \in  \R \}
+$
+and let
+\paragraph{} $\oplus$ for $\vec{u},\vec{v} \in V$ define 
+$
+\vec{u} \oplus \vec{v}=(v_1,v_2) \oplus (v_1,v_2)=(v_1+v_1-2,v_2+v_2+1)
+$
+\paragraph{}$\odot:$ for $\alpha \in \R, \vec{v} \in V$ define
+$
+\alpha \odot \vec{v}=\alpha \odot (v_1,v_2)=(\alpha v_2 + \alpha -1,\alpha v_1 -2\alpha+2)
+$
+\\
+\\
+Is V a vector space over $\R$ with the above operations?
+
+\paragraph{Solution 1.}I want to approach this problem using vector space properties so, suppose that
+\begin{eqnarray*}
+(-1) \odot \vec{u}&=&-\vec{u} \text{(Proof is given in the last question answers)}
+\\ \vec{u} \oplus (-\vec{u})&=&\vec{0}
+\\ \vec{u} \oplus \vec{0} &=& \vec{u}
+\end{eqnarray*}
+\paragraph{}so lets continue chosing a vector in the set such that $x_1,x_2 \in \R$
+\begin{eqnarray*}
+\vec{u}&=&(1,2)
+\\ -1 \odot (1,2) &=& ((-1)(2)+(-1)-1,(-1)(1)-2(-1)+2)
+\\ -\vec{u} &=& (-4,3)
+\\ (1,2) \oplus (-4,3) &=& (1+(-4)-2,2+3+1)
+\\ \vec{0}&=&(-5,6)
+\\ (1,2) \oplus (-5,6)&=&(1+(-5)-2,2+6+1)
+\\ &=& (-6,9)
+\\ \vec{u} &\neq& (-6,9)
+\end{eqnarray*}
+\paragraph{}so the equation doesn't satisfy our expected result. We can say that it is not a vector space over the $\R$
+
+
+\paragraph{Q2.}Let $V=\{ (x_1,x_2) | x_1,x_2 \in \R, x_1x_2 \neq 0 \}$ and let 
+\paragraph{}$\oplus:$ for $\vec{u},\vec{v} \in V$ define 
+$
+\vec{u} \oplus \vec{v}=(u_1,u_2) \oplus (v_1,v_2)=(u_1+v_1,u_2+v_2)
+$
+\paragraph{}$\odot:$ for $\alpha \in \R$ define 
+$
+\alpha \odot \vec{v}=\alpha \odot (v_1,v_2)=(\alpha v_1,\alpha v_2)
+$
+\\
+\\
+Is V a vector space over $\R$ with the above operations?
+
+\paragraph{Solution 2.}To be a vector space means that all the vector properties is satisfied so lets start our observations vital part of vector spaces
+\\
+\\
+vector addition denoted by $\oplus$
+\paragraph{}$\oplus : V \times V \rightarrow V (1)$
+\\
+\\
+scalar vector multiplication denoted by $\odot$
+\paragraph{}$\odot : \R \times V \rightarrow V (2)$
+so lets given an example and show it doesn't satify equation 1
+\begin{eqnarray*}
+(v_1,v_2) \oplus (-v_1,-v_2) &=& (0,0) 
+\\x_1 x_2 &=& 0
+\\(0,0) &\notin & V
+\\(1,3) \oplus  (-1,4) & = &(0,7)
+\\x_1 x_2 &=& 0
+\\(0,7) & \notin & V
+\end{eqnarray*}
+so $x_1,x_2 \in \R$ but it doesn't satisfy property 1 $\oplus : V \times V \rightarrow V$
+\paragraph{Q3.}Is the set of all invertible two by two matrices a vector space?
+\paragraph{Solution 3.}Lets start to work pointing out our vector operations.Question says invertible two by two matrices so for invertible two by two matrices we have
+\paragraph{}V=$\{$For each $A_{2x2}$ we have $B_{2x2}$ such that AxB=I$\}$
+\paragraph{}
+$\oplus :
+\begin{pmatrix}
+x_1&x_2\\
+x_3&x_4
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+x_1&x_2\\
+x_3&x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+x_1+x_1&x_2+x_2\\
+x_3+x_3&x_4+x_4
+\end{pmatrix}
+x_1,x_2,x_3,x_4 \in \C
+$ 
+\paragraph{}
+$
+\odot :
+\alpha
+\odot
+\begin{pmatrix}
+x_1&x_2\\
+x_3&x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+\alpha x_1& \alpha x_2\\
+\alpha x_3& \alpha x_4
+\end{pmatrix}
+\alpha \in \C
+$
+$
+x_1,x_2,x_3,x_4 \in \C
+$
+\paragraph{}and we know that our vector space must statisfy all vector properties.Let's continue our observation this
+\\
+vector addition denoted by $\oplus$
+\paragraph{}$\oplus : V \times V \rightarrow V (1)$
+\\
+\\
+scalar vector multiplication denoted by $\odot$
+\paragraph{}$\odot : \C \times V \rightarrow V (2)$
+\\
+\\
+so lets given an example and show it doesn't satify property 1 again
+\begin{eqnarray*}
+\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+-1 & 0\\
+0 & -1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+0 & 0\\
+0 & 0
+\end{pmatrix}
+\\ \begin{pmatrix}
+0 & 0\\
+0 & 0
+\end{pmatrix} & \notin & V
+\end{eqnarray*}
+we can clearly see that addtion operation takes place invertible two by two matrices but result of this operation isn't element of our set so \textbf{ we can say that invertible two by two matrices don't struct a vector space.} We can give lots of example doesn't satisfy this property.
+
+\paragraph{Q4.}Compute
+\paragraph{}1.
+$
+\left\{
+(-1) \odot
+\left[
+\begin{pmatrix}
+8\\
+1
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix}
+\right]
+\right\}
+\oplus
+\left\{
+3
+\odot
+\left[
+\begin{pmatrix}
+2\\
+0
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+\right]
+\right\}
+$
+\paragraph{}2.
+$
+\left\{
+\left[
+0
+\odot
+\begin{pmatrix}
+2\\
+3
+\end{pmatrix}
+\right]
+\oplus
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+\right\}
+\oplus
+\left\{
+\left[
+3
+\odot
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+\right]
+\oplus
+\left[
+2
+\odot
+\begin{pmatrix}
+9\\
+1
+\end{pmatrix}
+\right]
+\right\}
+$
+\paragraph{}3.
+$
+\left\{
+0
+\odot
+\left[
+\begin{pmatrix}
+2\\
+3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+\right]
+\right\}
+\oplus
+\left\{
+7
+\odot
+\left[
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+9\\
+1
+\end{pmatrix}
+\right]
+\right\}
+$
+
+\paragraph{Solution 4.}Let start to solve equations step by step
+\paragraph{}1.
+$
+\underbrace{
+\underbrace{
+\left\{
+(-1) \odot
+\underbrace{
+\left[
+\begin{pmatrix}
+8\\
+1
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix}
+\right]
+}_\text{Step 1.}
+\right\}
+}_\text{Step 2.}
+\oplus
+\underbrace{
+\left\{
+3
+\odot
+\underbrace{
+\left[
+\begin{pmatrix}
+2\\
+0
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+\right]
+}_\text{Step 3.}
+\right\}
+}_\text{Step 4.}
+}_\text{Step 5.}
+$
+\paragraph{Step 1.}
+\begin{eqnarray*}
+\begin{pmatrix}
+8\\
+1
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+8+0-4\\
+1+1-3
+\end{pmatrix}
+\\
+&=&
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 2.}
+\begin{eqnarray*}
+-1
+\odot
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+(-1)4-4(-1)+4\\
+(-1)(-1)-3(-1)+3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+4\\
+7
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 3.}
+\begin{eqnarray*}
+\begin{pmatrix}
+2\\
+0
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+2+0-4\\
+0+0-3
+\end{pmatrix}
+\\ &=&
+\begin{pmatrix}
+-2\\
+-3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 4.}
+\begin{eqnarray*}
+3
+\odot
+\begin{pmatrix}
+-2\\
+-3
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+3(-2)-4(3)+4\\
+3(-3)-3(3)+3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+-14\\
+-15
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 5.}
+\begin{eqnarray*}
+\begin{pmatrix}
+4\\
+7
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+-14\\
+-15
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4+(-14)-4\\
+7+(-15)-3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+-14\\
+-11
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}\textbf{ Step 5 is our final step at it is our result as well.}
+
+
+\paragraph{}2.
+$
+\underbrace{
+\underbrace{
+\left\{
+\underbrace{
+\left[
+0
+\odot
+\begin{pmatrix}
+2\\
+3
+\end{pmatrix}
+\right]
+}_\text{Step 1.}
+\oplus
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+\right\}
+}_\text{Step 2.}
+\oplus
+\underbrace{
+\left\{
+\underbrace{
+\left[
+3
+\odot
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+\right]
+}_\text{Step 3.}
+\oplus
+\underbrace{
+\left[
+2
+\odot
+\begin{pmatrix}
+9\\
+1
+\end{pmatrix}
+\right]
+}_\text{Step 4.}
+\right\}
+}_\text{Step 5.}
+}_\text{Step 6.}
+$
+\paragraph{Step 1.}
+\begin{eqnarray*}
+0
+\odot
+\begin{pmatrix}
+2\\
+3
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+(0)2-4(0)+4\\
+(0)3-3(0)+3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 2.}
+\begin{eqnarray*}
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4+4-4\\
+3+(-1)-3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 3.}
+\begin{eqnarray*}
+3
+\odot
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+(3)1-4(3)+4\\
+(3)2-3(3)+3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+-5\\
+0
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 4.}
+\begin{eqnarray*}
+2
+\odot
+\begin{pmatrix}
+9\\
+1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+(2)9-4(2)+4\\
+(2)1-3(2)+3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+14\\ 
+-1
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 5.}
+\begin{eqnarray*}
+\begin{pmatrix}
+-5\\
+0
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+14\\
+-1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+-5+14-4\\
+0+(-1)-3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+5\\
+-4
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 6.}
+\begin{eqnarray*}
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+5\\
+-4
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4+5-4\\
+(-1)+(-4)-3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+5\\
+-8
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}\textbf{Step 6 is our result for the whole operations and system.}
+\paragraph{}3.
+$
+\underbrace{
+\underbrace{
+\left\{
+0 \odot
+\underbrace{
+\left[
+\begin{pmatrix}
+2\\
+3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+\right]
+}_\text{Step 1.}
+\right\}
+}_\text{Step 2.}
+\oplus
+\underbrace{
+\left\{
+7
+\odot
+\underbrace{
+\left[
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+9\\
+1
+\end{pmatrix}
+\right]
+}_\text{Step 3.}
+\right\}
+}_\text{Step 4.}
+}_\text{Step 5.}
+$
+\paragraph{Step 1.}
+\begin{eqnarray*}
+\begin{pmatrix}
+2\\
+3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+4\\
+-1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+2+4-4\\
+3+(-1)-3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+2\\
+-1
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 2.}
+\begin{eqnarray*}
+0
+\odot
+\begin{pmatrix}
+2\\
+-1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+(0)2-4(0)+4\\
+(0)(-1)-3(0)+3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 3.}
+\begin{eqnarray*}
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+9\\
+1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+1+9-4\\
+2+1-3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+6\\
+0
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 4.}
+\begin{eqnarray*}
+7
+\odot
+\begin{pmatrix}
+6\\
+0
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+(7)6-4(7)+4\\
+(7)0-3(0)+3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+18\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Step 5.}
+\begin{eqnarray*}
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+18\\
+3
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4+18-4\\
+3+3-3
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+18\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}\textbf{Last step our result for whole operations}
+
+\paragraph{Q5.}Find the additive inverse of
+\paragraph{}1.
+$
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+$
+\paragraph{}2.
+$
+\begin{pmatrix}
+8\\
+1
+\end{pmatrix}
+$
+\paragraph{}3.
+$
+(-4)
+\odot
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+$
+\paragraph{Solution 5.}To find additive inverses I want to use Theorem AISM
+\paragraph{Theorem AISM}Additive Inverses from Scalar Multiplication
+\paragraph{}\textit{Suppose that V is a vector space and \textbf{u} $\in$ V.Then \textbf{-u}=(-1)\textbf{u}.}
+\paragraph{Proof}
+\begin{eqnarray*}
+-u&=&-u+\vec{0}
+\\&=& -u + \vec{0}u
+\\&=& -u +(1+(-1))u
+\\&=& -u +(1u+(-1)u)
+\\&=& -u +(u + (-1)u)
+\\&=& (-u+u) +(-1)u
+\\&=& \vec{0}+(-1)u
+\\&=&(-1)u
+\end{eqnarray*}
+
+\paragraph{}Using this theorem we can easily find additive inverse of the vectors let's start working with first one
+\paragraph{1.} 
+\begin{eqnarray*}
+\vec{u}
+&=&
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+\\
+-\vec{u}
+&=&
+-1
+\odot
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+\\&=&
+\begin{pmatrix}
+(-1)0-4(-1)+4\\
+(-1)0-3(-1)+3
+\end{pmatrix}
+=
+\underbrace{
+\begin{pmatrix}
+8\\
+6
+\end{pmatrix}
+}_\text{-$\vec{u}$}
+\end{eqnarray*}
+\paragraph{}Lets test our result using vector properties $\vec{u}-\vec{u}=\vec{0}$
+\begin{eqnarray*}
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+8\\
+6
+\end{pmatrix}
+=
+\begin{pmatrix}
+0+8-4\\
+0+6-3
+\end{pmatrix}
+=
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\\
+\vec{0}
+=
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}As you can see it satisfy property of vector space
+\paragraph{2.}
+\begin{eqnarray*}
+\vec{u}
+&=&
+\begin{pmatrix}
+8\\
+1
+\end{pmatrix}
+\\
+-\vec{u}
+&=&
+(-1)
+\odot
+\begin{pmatrix}
+8\\
+1
+\end{pmatrix}
+\\
+&=&
+\begin{pmatrix}
+(-1)8+(-4)(-1)+4\\
+(-1)1+(-3)(-1)+3
+\end{pmatrix}
+=
+\underbrace{
+\begin{pmatrix}
+0\\
+5
+\end{pmatrix}
+}_\text{- $\vec{u}$ }
+\end{eqnarray*}
+\paragraph{}Lets test our result using vector properties $\vec{u}-\vec{u}=\vec{0}$
+\begin{eqnarray*}
+\begin{pmatrix}
+8\\
+1
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+0\\
+5
+\end{pmatrix}
+=
+\begin{pmatrix}
+8+0-4\\
+1+5-3
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\\
+\vec{0}
+&=&
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{3.}Result of this scalar multiplication is zero vector because 
+$
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+$
+is zero vector for this vector space we already came this result subuqestion of 1,2 so,
+\begin{eqnarray*}
+(-4)
+\odot
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+=
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}Additive inverse of zero vector is itself because it satisfy $\vec{u}-\vec{u}=\vec{0}$
+\begin{eqnarray*}
+-1
+\odot
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+=
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+
+\end{document}

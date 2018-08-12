@@ -1,0 +1,400 @@
+\documentclass[11pt]{article}
+%Increase the text height
+\addtolength{\voffset}{-62pt}
+\addtolength{\textheight}{62pt}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%Increase the text width
+\addtolength{\hoffset}{-22pt}
+\addtolength{\oddsidemargin}{-32pt}
+\addtolength{\marginparsep}{-11pt}
+\addtolength{\marginparwidth}{-45pt}
+\addtolength{\textwidth}{110pt}
+
+\begin{document}
+\pagestyle{myheadings}
+\markright{\sc 230201057 Furkan Emre YILMAZ%
+\hfill Math 144 HW05 /p.}
+
+\paragraph{Q1}With the usual matrix matrix addition and scalar matrix multiplication is D a linear combination of A,B and C where
+\\
+$
+A=
+\begin{pmatrix}
+1& 2 & 2\\
+4& -1 & 1\\
+0& 0 & -8\\
+1& 6 & 2
+\end{pmatrix}
+$
+,
+$
+B=
+\begin{pmatrix}
+5& 2 & 0\\
+4& 3 & 1\\
+3& 0 & -2\\
+1& 5 & 1
+\end{pmatrix}
+$
+,
+$
+C=
+\begin{pmatrix}
+3& 2 & 9\\
+1& 0& 8\\
+0& -1 & 0\\
+7& 0 & 0
+\end{pmatrix}
+$
+,
+$
+D=
+\begin{pmatrix}
+-8& 4& 1\\
+11& -11 & -5\\
+-6& 1 & -36\\
+-4& 20& 8
+\end{pmatrix}
+$
+
+\paragraph{Solution 1.}Let's start to work with simple equations to find a linear combination.I want to point out
+\begin{eqnarray*}
+\alpha_1
+\begin{pmatrix}
+(1)& 2 & 2\\
+4& -1 & 1\\
+(0)& (0) & -8\\
+1& 6 & 2
+\end{pmatrix} 
++
+\alpha_2
+\begin{pmatrix}
+(5)& 2 & 0\\
+4& 3 & 1\\
+(3)& (0) & -2\\
+1& 5 & 1
+\end{pmatrix} 
++
+\alpha_3
+\begin{pmatrix}
+(3)& 2 & 9\\
+1& 0& 8\\
+(0)& (-1) & 0\\
+7& 0 & 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+(-8)& 4& 1\\
+11& -11 & -5\\
+(-6)& (1) & -36\\
+-4& 20& 8
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}If we write down each representing equation and solve separetly we obtain the coefficents.Lets continue with
+\begin{eqnarray*}
+0\alpha{_1}+3\alpha{_2}+0\alpha{_3}=-6\\
+3\alpha_3=-6\\
+\alpha_3 = -2
+\end{eqnarray*}
+\begin{eqnarray*}
+0\alpha{_1}+0\alpha{_2}+-1\alpha{_3}=1\\
+\alpha_2 = -1
+\end{eqnarray*}
+\begin{eqnarray*}
+1\alpha{_1}+5\alpha{_2}+3\alpha{_3}=-8\\
+1\alpha_1 -10-3 =-8\\
+\alpha_1 = 5
+\end{eqnarray*}
+\paragraph{}so we found $\alpha_1 , \alpha_2 , \alpha_3$ lets try to subsitude and see whether satisfy or not
+\begin{eqnarray*}
+5
+\begin{pmatrix}
+1& 2 & 2\\
+4& -1 & 1\\
+0& 0 & -8\\
+1& 6 & 2
+\end{pmatrix} 
++
+(-2)
+\begin{pmatrix}
+5& 2 & 0\\
+4& 3 & 1\\
+3& 0 & -2\\
+1& 5 & 1
+\end{pmatrix} 
++
+(-1)
+\begin{pmatrix}
+3& 2 & 9\\
+1& 0& 8\\
+0& -1 & 0\\
+7& 0 & 0
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+-8& 4& 1\\
+11& -11 & -5\\
+-6& 1 & -36\\
+-4& 20& 8
+\end{pmatrix}\\
+\begin{pmatrix}
+5& 10 & 10\\
+20& -5 & 5\\
+0& 0 & -40\\
+5& 30 & 10
+\end{pmatrix} 
++
+\begin{pmatrix}
+-10& -4 & 0\\
+-8& -6 & -2\\
+-6& 0 & 4\\
+-2& -10& -2
+\end{pmatrix} 
++
+\begin{pmatrix}
+-3& -2 & -9\\
+-1& 0& -8\\
+0& 1 & 0\\
+-7& 0 & 0
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+-8& 4& 1\\
+11& -11 & -5\\
+-6& 1 & -36\\
+-4& 20& 8
+\end{pmatrix}\\
+\begin{pmatrix}
+-8& 4& 1\\
+11& -11 & -5\\
+-6& 1 & -36\\
+-4& 20& 8
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+-8& 4& 1\\
+11& -11 & -5\\
+-6& 1 & -36\\
+-4& 20& 8
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{Q2}In CVS are the vectors 
+$
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+$
+and
+$
+\begin{pmatrix}
+2\\
+2
+\end{pmatrix}
+$
+linearly dependent?
+\paragraph{Solution 2.}Lets start work with
+\begin{eqnarray*}
+\alpha_1
+\odot
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+\oplus
+\alpha_2
+\odot
+\begin{pmatrix}
+2\\
+2
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}\\
+\begin{pmatrix}
+0\alpha_1 -4\alpha_1 +4\\
+0\alpha_1 -3\alpha_1 +3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+2\alpha_2 -4\alpha_2 +4\\
+2\alpha_2 -3\alpha_2 +3
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}\\
+\begin{pmatrix}
+-4\alpha_1 +4\\
+-3\alpha_1 +3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+-2\alpha_2 +4\\
+-\alpha_2 +3
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}\\
+\begin{pmatrix}
+-4\alpha_1 -2\alpha_2 +4\\
+-3\alpha_1 -\alpha_2 +3
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+4\\
+3
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}then if we solve last step using equations as
+\begin{eqnarray*}
+-4\alpha_1 -2\alpha_2 =0\\
+-3\alpha_1-\alpha_2 =0
+\end{eqnarray*}
+\paragraph{}and this matrix row reduced echelon form is an identity matrix means that we have only have trival solution and this is 
+\begin{eqnarray*}
+\begin{pmatrix}
+-4 & -2\\
+-3 & -1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}\\
+\alpha_1 &=&0\\
+\alpha_2 &=&0
+\end{eqnarray*}
+\paragraph{}so at the end we can say they are \textbf{linearly independent}, not \textbf{dependent}.
+\paragraph{Q3}Are the continuous functions $ e^{2\ln x}, x^2 , \cos x $ linearly dependent or independent, under the standart operations on functions?
+\paragraph{Solution 3.}We are searching,
+\begin{eqnarray*}
+\alpha_1 e^{2\ln x} + \alpha_2 x^2 + \alpha_3 \cos x=0\\
+\end{eqnarray*}
+\paragraph{}we can instantly substitude 
+\begin{eqnarray*}
+\alpha_1 &=& -1\\
+\alpha_2 &=& 1\\
+\alpha_3 &=& 0
+\end{eqnarray*}
+\paragraph{}and this satisfy our equation. We found a non-trivial solution to our system, we conclude that this functions are \textbf{linearly dependent}.
+\paragraph{Q4}Suppose the following two equalities hold:
+\begin{eqnarray*}
+\vec{v} &=&\alpha_1 \vec{u_1} +\alpha_2 \vec{u_2} + ... + \alpha_k \vec{u_k}\\
+\vec{v} &=&\beta_1 \vec{u_1} +\beta_2 \vec{u_2} + ... + \beta_k  \vec{u_k}
+\end{eqnarray*}
+such that for at least one index i, we have $\alpha_i \neq \beta_i $. Does it mean that $ \vec{u_i} = \vec{0}$ where $\vec{0}$ is the zero vector?
+\paragraph{Solution 4.}At this point I want to emphasize "at least one" and start to observe
+\paragraph{}Suppose that $\alpha_1 \neq \beta_1$ and all others index i $\alpha_i = \beta_i$ Lets compute
+\begin{eqnarray*}
+\vec{v}-\vec{v}&=&\vec{0}\\
+\vec{v}-\vec{v}&=&(\alpha_1 \vec{u_1} +\alpha_2 \vec{u_2} + ... + \alpha_k \vec{u_k})-(\beta_1 \vec{u_1} +\beta_2 \vec{u_2} + ... + \beta_k  \vec{u_k})\\
+\vec{0}&=&\alpha_1 \vec{u_1}-\beta_1 \vec{u_1}\\
+\vec{0}&=&(\alpha_1-\beta_1)\vec{u_1} \text{               ($\alpha_1 \neq \beta_1$)}
+\end{eqnarray*} 
+\paragraph{}in this situation only option is the 
+\begin{eqnarray*}
+\vec{u_1}=\vec{0}
+\end{eqnarray*}
+\paragraph{}as a result if we are talking about at least one index i $\alpha_i \neq \beta_i$ at least one condition only hold when one vector such that $\vec{u_i}=\vec{0}$ exist in linear combination.
+
+
+
+\paragraph{Q5}Suppose that $\vec{u_1},\vec{u_2},\vec{u_3}$ are linearly dependent. What can you say about the linear dependence or independence of the vectors $\vec{v_1} = \vec{u_1} - 2\vec{u_2}$ and $\vec{v_2} = 3\vec{u_2} + 2\vec{u_3}$?
+\paragraph{Solution 5.}I want to show two different and possible situation based on this we conclude that \textbf{we can't say anything about linear dependence or independence of $\vec{v_1}, \vec{v_2}$ }
+\paragraph{}First one is, lets assume
+\begin{eqnarray*}
+\vec{u_1}
+&=&
+\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}\\
+\vec{u_2}
+&=&
+\begin{pmatrix}
+0\\
+0\\
+0
+\end{pmatrix}\\
+\vec{u_3}
+&=&
+\begin{pmatrix}
+0\\
+0\\
+0
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}$\vec{u_1},\vec{u_2},\vec{u_3}$ are now linearly dependent, lets compute $\vec{v_1}, \vec{v_2}$
+\begin{eqnarray*}
+\vec{v_1}
+&=&
+\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}\\
+\vec{v_2}
+&=&
+\begin{pmatrix}
+0\\
+0\\
+0
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}in this case $\vec{v_1}, \vec{v_2}$ are \textbf{linearly dependent}
+\paragraph{}In other case is 
+\begin{eqnarray*}
+\vec{u_1}
+&=&
+\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}\\
+\vec{u_2}
+&=&
+\begin{pmatrix}
+0\\
+1\\
+0
+\end{pmatrix}\\
+\vec{u_3}
+&=&
+\begin{pmatrix}
+0\\
+0\\
+0
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}again our $\vec{u_1},\vec{u_2},\vec{u_3}$ vectors are linearly dependent. Lets compute $\vec{v_1}, \vec{v_2}$
+\begin{eqnarray*}
+\vec{v_1}
+&=&
+\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}\\
+\vec{v_2}
+&=&
+\begin{pmatrix}
+0\\
+3\\
+0
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}and as you can see in this case they are \textbf{linearly independent}. 
+\end{document}
+

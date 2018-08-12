@@ -1,0 +1,210 @@
+\documentclass[11pt]{article}
+%Increase the text height
+\addtolength{\voffset}{-62pt}
+\addtolength{\textheight}{62pt}
+
+
+%Increase the text width
+\addtolength{\hoffset}{-22pt}
+\addtolength{\oddsidemargin}{-32pt}
+\addtolength{\marginparsep}{-11pt}
+\addtolength{\marginparwidth}{-45pt}
+\addtolength{\textwidth}{110pt}
+
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{\sc 230201057 Furkan Emre YILMAZ%
+\hfill Math 144 HW01 /p.}
+
+\paragraph{Q1.} Consider the following argument:
+\begin{enumerate}
+\item if a student's CENG115 grade is CB the student will pass Finite Mathematics;
+\item Ali is a student who took CENG115;
+\item Ali's grade in CENG115 grade is DD;(1)
+\item therefore, Ali will not pass Finite Mathematics.(2)
+\end{enumerate}
+Trust us: the above argument is \emph{very wrong}! Find and explain the error
+in the argument (Hint: \emph{inverse error})
+
+\paragraph{Solution 1.} First we can convert sentences to logic representation:
+\paragraph{}p				 : A student's CENG115 grade is CB
+\paragraph{}q				 : Student will pass Finite Mathematics\\
+\begin{itemize}
+\item{Provided that Ali is a student and took CENG115}
+\paragraph{}$\neg$ p : Ali's CENG115 grade is not CB (1)
+\paragraph{}$\neg$ q :	Ali will not pass Finite Mathematics
+\paragraph{}p $\rightarrow$ q: If a student's CENG115 grade is CB the student will pass Finite Mathematics
+\paragraph{}$\neg$ p $\rightarrow$ $\neg$ q: If a student CENG115 grade is not CB the student will not pass the Finite Mathematics(1)(2)
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{l|l|l|l|l|l}
+\centering
+& & & Contrapositive & Converse & Inverse \\
+p & q & p $\rightarrow$ q & $\neg$ q $\rightarrow$ $\neg$ p & q $\rightarrow$ p & $\neg$ p $\rightarrow$ $\neg$ q \\
+\hline
+1 & 1 & 1 & 1 & 1 & 1\\
+1 & 0 & 0 & 0 & 1 & 1\\
+0 & 1 & 1 & 1 & 0 & 0\\
+0 & 0 & 1 & 1 & 1 & 1\\
+\end{tabular}
+\end{center}
+
+
+\paragraph{} As you can see in the truth table orginal condition and contrapositive is equivalent whereas converse and inverse not. Therefore we can't conclude "Ali's grade in CENG115 grade is DD therefore Ali will not pass Finite Mathematics($\neg$ p $\rightarrow$ $\neg$ q)". It causes the inverse error. Conclusion is wrong.
+\\
+\paragraph{Q2.} Suppose that a student misses the first midterm, obtains 20 on
+the second midterm and misses the final. Suppose further the same student
+presents a valid doctors note for missing the final exam and receives 25 on
+the make-up exam. What homework grade does the student need to pass the
+course.
+
+\paragraph{Solution 2.}To become more meaningful and understandable we can graph a table.
+
+\begin{center}
+\begin{tabular}{l|l|l|l|l}
+&Mid1&Mid2&Final&HW\\
+\hline
+Student&NA&20&25(Make-up)&?
+
+\end{tabular}
+
+\end{center}
+\paragraph{}The student ability to pass depend on below inequality
+\begin{equation}
+g_{mid1} +  g_{mid2} + g_{final} + g_{hw} \geq 60
+\end{equation}
+\paragraph{}We have one unknown which is homework grade so we can solve this inequality by substituting known variables and we can learn minumum homework grade to pass the course
+\begin{eqnarray*}
+g_{mid1} +  g_{mid2} + g_{final} + g_{hw} &\geq & 60
+\\0 + 20 + 25 + g_{hw} &\geq & 60
+\\g_{hw} & \geq & 60-45
+\\g_{hw} & \geq & 15
+\end{eqnarray*}
+\paragraph{}so we can conlude that the student need minimum 15 point his/her homework to pass the course
+
+\paragraph{Q3.} The homework grades of a student in Math 144 are
+\begin{center}
+\begin{tabular}{*{14}{c}}
+H01 & H02 & H03 & H04 & H05 & H06 & H07 & H08 & H09 
+	& H10 & H11 & H12 & H13 & H14
+\\\hline
+10 & 12 & 1 & 5 & 3 & 15 & 15 & & & & 10 & 15 & 15
+\end{tabular}
+\end{center}
+How many points will the homeworks contribute towards the student's letter
+grade?
+
+\paragraph{Solution 3.}"Formula for the homework grade is: sum of the six homeworks contributing towards your grade divided by three rounded up to the nearest integer." so we can write this sentence in the mathematical form
+\begin{equation}
+(hw_{max1} + hw_{max2} + hw_{max3} + hw_{max4} + hw_{max5} + hw_{max6})/3 = c
+\end{equation}
+\paragraph{}Note: We must select the greatest six homework grade for evalutation.
+\begin{eqnarray*}
+HW01=12
+\\HW02=10
+\\HW06=15
+\\HW07=15
+\\HW12=15
+\\HW13=15
+\end{eqnarray*}
+\paragraph{}and we continue
+\begin{eqnarray*}
+(hw_{max1} + hw_{max2} + hw_{max3} + hw_{max4} + hw_{max5} + hw_{max6})/3 &=& c
+\\(12+10+15+15+15+15)/3&=&c
+\\82/3&=&c
+\\c&=&27.3
+\end{eqnarray*}
+\paragraph{}If we round up to the nearest integer we obtain
+\begin{eqnarray*}
+c=28
+\end{eqnarray*}
+
+\paragraph{}so we can conclude that homework contribute 28 points towards the student's letter grade.
+
+\paragraph{Q4.} For each linear equation bellow describe the set of solutions.
+If the equation is not linear explain why.
+\begin{enumerate}
+\item \(2 x_1 + x_2(1+x_3) + \sqrt{4}x_3= 4\)
+\item \((\cos 2) x_1 + \ln (7x_2) + \sqrt{4}x_3= 4\)
+\item \(0 x_1 + (\ln e^6) x_2 + \sqrt{4}x_3= 4^{\log_4 7}\)
+\end{enumerate}
+
+\paragraph{Solution 4.}A linear equation is the form
+\begin{equation}
+a_{1} x_{1} + a_{2} x_{} + ... a_{n} x_{n}=d
+\end{equation}
+\paragraph{}The value d is the constant of the linear equation and similiar to the coefficients it belongs to the real(complex) numbers.
+
+\paragraph{}Considering this brief definition first equation is not a linear equation
+\begin{eqnarray}
+2 x_1 + x_2(1+x_3) + \sqrt{4}x_3= 4
+\\ 2 x_1 + x_2+\mathbf{x_2 x_3} + \sqrt{4}x_3= 4
+\end{eqnarray}
+\paragraph{} $\mathbf{x_2 x_3}$ multiplication does not satisfy the linear equations need.Therefore, it's not a linear equation.
+\paragraph{} When we look the equation two
+\begin{equation}
+(cos 2) x_1 + \mathbf{\ln (7x_2)} + \sqrt{4}x_3= 4 
+\end{equation}
+\paragraph{} $\mathbf{\ln (7x_2)}$ function is not a linear and make this equation non-linear equation.
+
+\paragraph{}Lastly we have equation
+\begin{equation}
+0 x_1 + (\ln e^6) x_2 + \sqrt{4}x_3= 4^{\log_4 7}
+\end{equation}
+\paragraph{}This equation satisfy the linear equation need.It is a linear equation so if we solve this equation the set of solution
+\paragraph{}Lets we say 
+\begin{eqnarray*}
+0 x_1 + (\ln e^6) x_2 + \sqrt{4}x_3&=& 4^{\log_4 7}
+\\x_1&=&a
+\\x_2&=&b
+\\0 a + (\ln e^6) b + \sqrt{4}x_3&=&4^{\log_4 7}
+\\ \sqrt{4}x_3&=&4^{\log_4 7}-(\ln e^6) b
+\\ x_3&=&\frac{4^{\log_4 7}-(\ln e^6) b}{\sqrt{4}}
+\\ x_3&=&\frac{7-6 b}{\sqrt{4}}
+\end{eqnarray*}
+\paragraph{}so at the end we can conclude that $x_1$ can take any complex value and set of solution for equations can writen as
+\begin{eqnarray*}
+x_1&=&a
+\\x_2&=&b
+\\x_3&=&\frac{7-6 b}{\sqrt{4}}
+\\ &\{ (a,b,\frac{7-6 b}{\sqrt{4}})|a,b \in C \}&
+\end{eqnarray*}
+
+\paragraph{Q5. } Consider the following system of linear equations in
+\(\{x_1,x_2,\dots,x_9\}\).
+\begin{eqnarray*}
+3 x_{1} -  x_{2} + x_{8} - 5 x_{9} &=& 1
+\\x_{3} + 2 x_{5} + x_{6} + 3 x_{7} &=& 3
+\\2 x_{2} + 5 x_{4} + 2 x_{5} + x_{9} &=& 4
+\\2 x_{2} + 2 x_{5} + x_{9} &=& 9
+\end{eqnarray*}
+which of the following is a solution to the above system of linear equation:
+\begin{enumerate}
+\item \(\left(1,\,2,\,-1,\,-1,\,2,\,3,\,-1,\,5,\,1\right)\)
+\item \(\left(1,\,2,\,-1,\,-1,\,2,\,0,\,-1,\,5,\,1\right)\)
+\item \(\left(1,\,2,\,-1,\,-1,\,2,\,3,\,-1,\,5,\,1,\, 0\right)\)
+\end{enumerate}
+
+\paragraph{Solution 5.}We can substitute tuples $(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9)$ the form so
+\begin{eqnarray*}
+(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9)&=&(1,\,2,\,-1,\,-1,\,2,\,3,\,-1,\,5,\,1)
+\\3(1) - (2) + (5) - 5(1) &=& 1
+\\(-1) + 2(2) + (3) + 3(-1) &=& 3
+\\2(2) + 5(-1) + 2(2) + (1) &=& 4
+\\2(2) + 2(2) + (1) &=& 9
+\end{eqnarray*}
+\paragraph{}First tuple is a solution to system of linear equation.When we look the second tuple
+\begin{eqnarray*}
+(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9)&=&(1,\,2,\,-1,\,-1,\,2,\,0,\,-1,\,5,\,1)
+\\3(1) - (2) + (5) - 5(1) &=& 1
+\\(-1) + 2(2) + (0) + 3(-1) &\neq & 3
+\end{eqnarray*}
+\paragraph{}we can conclude that it is not a solution for system of linear equation.For last one
+\begin{eqnarray}
+(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9)&\neq &(1,\,2,\,-1,\,-1,\,2,\,3,\,-1,\,5,\,1,\, 0)
+\end{eqnarray}
+\paragraph{}we have not one-to-one matching so it is not solution for system of linear equation.
+
+\end{document}

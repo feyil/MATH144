@@ -1,0 +1,373 @@
+\documentclass[11pt]{article}
+%Increase the text height
+\addtolength{\voffset}{-62pt}
+\addtolength{\textheight}{62pt}
+\usepackage{amsmath}
+
+%Increase the text width
+\addtolength{\hoffset}{-22pt}
+\addtolength{\oddsidemargin}{-32pt}
+\addtolength{\marginparsep}{-11pt}
+\addtolength{\marginparwidth}{-45pt}
+\addtolength{\textwidth}{110pt}
+
+\begin{document}
+
+\pagestyle{myheadings}
+\markright{\sc 230201057 Furkan Emre YILMAZ%
+\hfill Math 144 HW02 /p.}
+\paragraph{Solution 1.} Given system of equation S is:
+\begin{eqnarray*}
+x_7&=&1
+\\-x_1+x_3+2x_5&=&2
+\\5x_4+2x_5+2x_7&=&9
+\\x_2+2x_5&=&4
+\end{eqnarray*}
+\paragraph{}We can write system of equations S in matrix format as
+\[
+S=
+  \begin{pmatrix}
+  
+    0 & 0 & 0 & 0 & 0 & 0 & 1  \\
+    -1 & 0 & 1 & 0 & 2 & 0 & 0\\
+    0 & 0 & 0 & 5 & 2 & 0 & 2\\
+    0 & 1 & 0 & 0 & 2 & 0 & 0
+  \end{pmatrix}
+\]
+\paragraph{} We can write system of equations S in augmented matrix format as
+\[
+S=
+\left(\begin{array}{ccccccc|c}  
+	0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+    -1 & 0 & 1 & 0 & 2 & 0 & 0 & 2\\
+    0 & 0 & 0 & 5 & 2 & 0 & 2 & 9 \\
+    0 & 1 & 0 & 0 & 2 & 0 & 0 & 4
+\end{array}\right)
+\]
+\paragraph{}We can write system of equation S in vector form as
+\[
+\begin{pmatrix}
+	0\\
+	-1\\
+	0\\
+	0
+\end{pmatrix}x_1
++
+\begin{pmatrix}
+	0\\
+	0\\
+	0\\
+	1
+\end{pmatrix}x_2
++
+\begin{pmatrix}
+	0\\
+	1\\
+	0\\
+	0
+\end{pmatrix}x_3
++
+\begin{pmatrix}
+	0\\
+	0\\
+	5\\
+	0	
+\end{pmatrix}x_4
++
+\begin{pmatrix}
+	0\\
+	2\\
+	2\\
+	2
+\end{pmatrix}x_5
++
+\begin{pmatrix}
+	0\\
+	0\\
+	0\\
+	0
+\end{pmatrix}x_6
++
+\begin{pmatrix}
+	1\\
+	0\\
+	2\\
+	0
+\end{pmatrix}x_7
+=
+\begin{pmatrix}
+	1\\
+	2\\
+	9\\
+	4
+\end{pmatrix}
+\]
+\paragraph{Solution 2.} If we simplify what question ask is this:
+\begin{eqnarray*}
+T_1&=&3S_4
+\\T_2&=&S_1+S_4
+\\T_3&=&3S_2+S_4
+\end{eqnarray*}
+\paragraph{}To create such an equation we can use matrix
+\[
+\begin{pmatrix}
+0 & 0 & 0 & 3\\
+1 & 0 & 0 & 1\\
+0 & 3 & 0 & 1
+\end{pmatrix}
+\]
+\paragraph{} In above matrix each row represent an equation of T and each colum is represent coefficent for S equations so we can use coefficents and matrix multiplication to obtain a matrix which is wanted form:
+\[
+T=
+\begin{pmatrix}
+0 & 0 & 0 & 3\\
+1 & 0 & 0 & 1\\
+0 & 3 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccccccc|c}  
+	0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+    -1 & 0 & 1 & 0 & 2 & 0 & 0 & 2\\
+    0 & 0 & 0 & 5 & 2 & 0 & 2 & 9 \\
+    0 & 1 & 0 & 0 & 2 & 0 & 0 & 4
+\end{array}\right)
+\]
+\paragraph{Solution 3.}Given matrices is 
+$
+A=
+\begin{pmatrix}
+3 & -1 & 5 & -1 & 9 & 0 & 1
+\end{pmatrix}
+$
+and 
+$
+B=
+\begin{pmatrix}
+0\\
+1\\
+2\\
+1\\
+8\\
+4\\
+5
+\end{pmatrix}
+$
+\paragraph{}If we compute AB we obtain
+\[
+\begin{pmatrix}
+3 & -1 & 5 & -1 & 9 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+0\\
+1\\
+2\\
+1\\
+8\\
+4\\
+5
+\end{pmatrix}
+=
+\begin{bmatrix}
+(3)(0)+(-1)(1)+(5)(2)+(-1)(1)+(9)(8)+(0)(4)+(1)(5)
+\end{bmatrix}
+\]
+\paragraph{}end then result is 1x1 matrix
+\[
+\begin{bmatrix}
+85
+\end{bmatrix}
+\]
+\paragraph{}We can't compute BA because it is not exist to compute matrix multiplication the number of the colums of the first matrix must equal the number of the colums of the second matrix
+\paragraph{}However we can compute B AB multiplication because they satisfy the matrix multiplication rules.B is 7x1 and AB is as we computed 1x1 so
+\[
+\begin{pmatrix}
+0\\
+1\\
+2\\
+1\\
+8\\
+4\\
+5
+\end{pmatrix}
+\begin{bmatrix}
+85
+\end{bmatrix}
+=
+\begin{bmatrix}
+(0)(85)\\
+(1)(85)\\
+(2)(85)\\
+(1)(85)\\
+(8)(85)\\
+(4)(85)\\
+(5)(85)
+\end{bmatrix}
+\]
+\paragraph{}and then result is
+\[
+\begin{pmatrix}
+0\\
+85\\
+170\\
+85\\
+680\\
+340\\
+425
+\end{pmatrix}
+\]
+\paragraph{Solution 4.}Question gives us U=
+$
+\begin{pmatrix}
+7&0\\
+1&-1\\
+1&2\\
+3&4
+\end{pmatrix}
+$
+and V=
+$
+\begin{pmatrix}
+1 & 6 & 2 & 6 & 3\\
+4 & 4 & 4 & 6 & -1
+\end{pmatrix}
+$
+,then 
+\[
+W=UV=
+\begin{pmatrix}
+7 & 42 & 14 & 42 & 21\\
+-3 & 2 & -2 & 0 & 4\\
+9 & 14 & 10 & 18 & 1\\
+19 & 34 & 22 & 42 & 5
+\end{pmatrix}
+\]
+\paragraph{}and ask to find 
+\begin{enumerate}
+\item Write the third column of W as a linear combination of the colums of U.
+\item Write the second and forth row of W as linear combinations of the rows V.
+\end{enumerate}
+Lets start with first question.First of all third column of W is
+$
+\begin{pmatrix}
+14\\
+-2\\
+10\\
+22
+\end{pmatrix}
+$
+and we can write this as a linear combinations of U colums
+\[
+\begin{pmatrix}
+7\\
+1\\
+1\\
+3
+\end{pmatrix}x
++
+\begin{pmatrix}
+0\\
+-1\\
+2\\
+4
+\end{pmatrix}y
+=
+\begin{pmatrix}
+14\\
+-2\\
+10\\
+22
+\end{pmatrix}
+\]
+\paragraph{}Secondly we can try to write the second row W as linear combination of the rows of V to accomplish this we can take the transpose of both W and V. By doing this we change rows by colums
+$W^T $ is 
+\[
+W^T=
+\begin{pmatrix}
+7& -3& 9& 19\\
+42& 2& 14& 34\\
+14& -2& 10& 22\\
+42& 0& 18& 42\\
+21& 4& 1& 5
+\end{pmatrix}
+\]
+\paragraph{}and $V^T$ is
+\[
+V^T=
+\begin{pmatrix}
+1&4\\
+6&4\\
+2&4\\
+6&6\\
+3&-1
+\end{pmatrix}
+\]
+\paragraph{}and then we can write as
+\[
+\begin{pmatrix}
+1\\
+6\\
+2\\
+6\\
+3
+\end{pmatrix}x
++
+\begin{pmatrix}
+4\\
+4\\
+4\\
+6\\
+-1
+\end{pmatrix}y
+=
+\begin{pmatrix}
+3\\
+2\\
+-2\\
+0\\
+4
+\end{pmatrix}
+\]
+\paragraph{}Finally we can try to write the forth row of W as linear combinations of the rows of V. We already obtained transpose of matrises so we can write the form
+\[
+\begin{pmatrix}
+1\\
+6\\
+2\\
+6\\
+3
+\end{pmatrix}a
++
+\begin{pmatrix}
+4\\
+4\\
+4\\
+6\\
+-1
+\end{pmatrix}b
+=
+\begin{pmatrix}
+19\\
+34\\
+22\\
+42\\
+5
+\end{pmatrix}
+\]
+\paragraph{Solution 5.}Given matrix
+$
+\begin{pmatrix}
+4&1&7\\
+5&2&8\\
+6&3&9
+\end{pmatrix}
+$
+show that is a zero divisor. If the matrix not a zero divisor justify your claim.
+
+This matrix's determinant is zero so it isn't an invertiable matrix and when I try to take inverse of this matrix I obtain 
+\[
+\left(\begin{array}{ccc|ccc}  
+	1 & 0 & 2 & 2/3 & -1/3 & 0 \\
+    0 & 1 & -1 & -5/3 & 4/3 & 0 \\
+    0 & 0 & 0 & 1 & -2 & 1  \\
+\end{array}\right)
+\]
+\end{document}

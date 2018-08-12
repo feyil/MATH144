@@ -1,0 +1,976 @@
+\documentclass[11pt]{article}
+%Increase the text height
+\addtolength{\voffset}{-62pt}
+\addtolength{\textheight}{62pt}
+\usepackage{amsmath}
+
+%Increase the text width
+\addtolength{\hoffset}{-22pt}
+\addtolength{\oddsidemargin}{-32pt}
+\addtolength{\marginparsep}{-11pt}
+\addtolength{\marginparwidth}{-45pt}
+\addtolength{\textwidth}{110pt}
+
+\begin{document}
+\pagestyle{myheadings}
+\markright{\sc 230201057 Furkan Emre YILMAZ%
+\hfill Math 144 HW03 /p.}
+
+\paragraph{Q1.}Reduce the following system to Reduced Echelon form representing each elementary operation as matrix multiplication solve it and write the solution in vector form. Identify the homogeneous and particular solutions
+\[
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 2 & 2\\
+    2 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    4 & 0 & 2 & 2\\
+\end{array}\right)
+\]
+
+\paragraph{Solution 1.}We can start to work step by step simplifying equations using Gauss' Method
+\paragraph{Step 1.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	-2 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 2 & 2\\
+    2 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    4 & 0 & 2 & 2
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 2 & 2\\
+    0 & -3 & -3 & -3\\
+    0 & 1 & 0 & 1\\
+    4 & 0 & 2 & 2
+\end{array}\right)
+\end{eqnarray*}
+\paragraph{Step 2.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	-4 & 0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 2 & 2\\
+    0 & -3 & -3 & -3\\
+    0 & 1 & 0 & 1\\
+    4 & 0 & 2 & 2
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 2 & 2\\
+    0 & -3 & -3 & -3\\
+    0 & 1 & 0 & 1\\
+    0 & -8 & -6 & -6
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 3.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 2/3 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 2 & 2\\
+    0 & -3 & -3 & -3\\
+    0 & 1 & 0 & 1\\
+    0 & -8 & -6 & -6
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & -3 & -3 & -3\\
+    0 & 1 & 0 & 1\\
+    0 & -8 & -6 & -6
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 4.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & -1/3 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & -3 & -3 & -3\\
+    0 & 1 & 0 & 1\\
+    0 & -8 & -6 & -6
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    0 & -8 & -6 & -6
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 5.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & -1/2
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    0 & -8 & -6 & -6
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    0 & 4 & 3 & 3
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 6.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & -3 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    0 & 4 & 3 & 3
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    0 & 1 & 0 & 0
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 7.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & -1 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    0 & 1 & 0 & 0
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 1\\
+    0 & 1 & 0 & 0
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 8.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & -1 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 1\\
+    0 & 1 & 0 & 0
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 1\\
+    0 & 0 & 0 & -1
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 9.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & 0 & 1\\
+    0 & 0 & 0 & -1
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 1\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 0 & -1
+\end{array}\right)
+\end{eqnarray*}
+\paragraph{}At the end we obtain Reduced Echelon form of the matrix.As you can see we obtain this matrix in 10 step.However we can obtain such matrix just one multiplication
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & -1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & -1 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & -3 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & -1/2
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & -1/3 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\\
+\mathbf{x}
+\begin{pmatrix}
+	1 & 2/3 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	-4 & 0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	-2 & 1 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 2 & 2\\
+    2 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    4 & 0 & 2 & 2
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 1\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 0 & -1
+\end{array}\right)
+\end{eqnarray*}
+\paragraph{}so we can simplfy this multiplication as
+\begin{eqnarray*}
+\begin{pmatrix}
+	-1/3 & 2/3 & 0 & 0\\
+	0 & 0 & 1 & 0\\
+	2/3 & -1/3 & -1 & 0\\
+	0 & 1 & -1 & -1/2
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 2 & 2\\
+    2 & 1 & 1 & 1\\
+    0 & 1 & 0 & 1\\
+    4 & 0 & 2 & 2
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 1\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 0 & -1
+\end{array}\right)
+\end{eqnarray*}
+\paragraph{}and we can say that this equations system has no solution because there is no solution for last equations
+\begin{eqnarray*}
+0x_1+0x_2+0x_3&=&-1
+\\0&\neq&-1
+\end{eqnarray*}
+
+\paragraph{Q2.}Reduce the following system to Reduced Echelon form representing each elementary operation as matrix multiplication, solve it and write the solution in vector form.Indentify the homogeneous and particular solutions.
+\[
+\left(\begin{array}{cccccc|c}  
+	2 & 2 & 0 & 4 & 5 & 1 & 1\\
+    3 & 0 & 8 & 2 & 15 & 3 & 0\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+\]
+
+\paragraph{Solution 2.}We can start to work step by step simplifying equations using Gauss' Method
+\paragraph{Step 1.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & -2 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	2 & 2 & 0 & 4 & 5 & 1 & 1\\
+    3 & 0 & 8 & 2 & 15 & 3 & 0\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c}  
+	0 & 6 & 0 & -4 & 15 & -15 & 1\\
+    3 & 0 & 8 & 2 & 15 & 3 & 0\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 2.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & -3 \\
+	0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	0 & 6 & 0 & -4 & 15 & -15 & 1\\
+    3 & 0 & 8 & 2 & 15 & 3 & 0\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c}  
+	0 & 6 & 0 & -4 & 15 & -15 & 1\\
+    0 & 6 & 8 & -10 & 30 & -21 & 0\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 3.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	-1 & 1 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	0 & 6 & 0 & -4 & 15 & -15 & 1\\
+    0 & 6 & 8 & -10 & 30 & -21 & 0\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c}  
+	0 & 6 & 0 & -4 & 15 & -15 & 1\\
+    0 & 0 & 8 & -6 & 15 & -6 & -1\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 4.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	1/3 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	0 & 6 & 0 & -4 & 15 & -15 & 1\\
+    0 & 0 & 8 & -6 & 15 & -6 & -1\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c}  
+	0 & 6 & 0 & -4 & 15 & -15 & 1\\
+    0 & 0 & 8 & -6 & 15 & -6 & -1\\
+    1 & 0 & 0 & 8/3 & 0 & 3 & 1/3
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 5.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1/6 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	0 & 6 & 0 & -4 & 15 & -15 & 1\\
+    0 & 0 & 8 & -6 & 15 & -6 & -1\\
+    1 & 0 & 0 & 8/3 & 0 & 3 & 1/3
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c}  
+	0 & 1 & 0 & -2/3 & 5/2 & -5/2 & 1/6\\
+    0 & 0 & 8 & -6 & 15 & -6 & -1\\
+    1 & 0 & 0 & 8/3 & 0 & 3 & 1/3
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 6.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1/8 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	0 & 1 & 0 & -2/3 & 5/2 & -5/2 & 1/6\\
+    0 & 0 & 8 & -6 & 15 & -6 & -1\\
+    1 & 0 & 0 & 8/3 & 0 & 3 & 1/3
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c}  
+	0 & 1 & 0 & -2/3 & 5/2 & -5/2 & 1/6\\
+    0 & 0 & 1 & -3/4 & 15/8 & -3/4 & -1/8\\
+    1 & 0 & 0 & 8/3 & 0 & 3 & 1/3
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{Step 7.}
+\begin{eqnarray*}
+\begin{pmatrix}
+	0 & 0 & 1 \\
+	1 & 0 & 0 \\
+	0 & 1 & 0
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	0 & 1 & 0 & -2/3 & 5/2 & -5/2 & 1/6\\
+    0 & 0 & 1 & -3/4 & 15/8 & -3/4 & -1/8\\
+    1 & 0 & 0 & 8/3 & 0 & 3 & 1/3
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c} 
+ 	1 & 0 & 0 & 8/3 & 0 & 3 & 1/3\\
+	0 & 1 & 0 & -2/3 & 5/2 & -5/2 & 1/6\\
+    0 & 0 & 1 & -3/4 & 15/8 & -3/4 & -1/8
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{}At the end we obtain Reduced Echelon form of the matrix.As you can see we obtain this matrix in 7 step.However we can obtain such matrix just one multiplication
+\begin{eqnarray*}
+\begin{pmatrix}
+	0 & 0 & 1 \\
+	1 & 0 & 0 \\
+	0 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1/8 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1/6 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	1/3 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	-1 & 1 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & -3 \\
+	0 & 0 & 1
+\end{pmatrix}
+\\ 
+\mathbf{x}
+\begin{pmatrix}
+	1 & 0 & -2 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	2 & 2 & 0 & 4 & 5 & 1 & 1\\
+    3 & 0 & 8 & 2 & 15 & 3 & 0\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c} 
+ 	1 & 0 & 0 & 8/3 & 0 & 3 & 1/3\\
+	0 & 1 & 0 & -2/3 & 5/2 & -5/2 & 1/6\\
+    0 & 0 & 1 & -3/4 & 15/8 & -3/4 & -1/8
+\end{array}\right)
+\end{eqnarray*}
+\paragraph{}so we can simplfy this multiplication as
+\begin{eqnarray*}
+\begin{pmatrix}
+	1/3 & 0 & 1/3 \\
+	1/6 & 0 & -1/3 \\
+	-1/8 & 1/8 & -1/8
+\end{pmatrix}
+\left(\begin{array}{cccccc|c}  
+	2 & 2 & 0 & 4 & 5 & 1 & 1\\
+    3 & 0 & 8 & 2 & 15 & 3 & 0\\
+    1 & -2 & 0 & 4 & -5 & 8 & 0
+\end{array}\right)
+=
+\left(\begin{array}{cccccc|c} 
+ 	1 & 0 & 0 & 8/3 & 0 & 3 & 1/3\\
+	0 & 1 & 0 & -2/3 & 5/2 & -5/2 & 1/6\\
+    0 & 0 & 1 & -3/4 & 15/8 & -3/4 & -1/8
+\end{array}\right)
+\end{eqnarray*}
+
+\paragraph{}Applying Gauss' Method we obtain Reduced Echelon form. We can clearly see that $\mathbf{•}{x_4,x_5,x_6}$ are our free variables and we can write $\mathbf{•}{x_1,x_2,x_3}$ as
+\begin{eqnarray*}
+x_1&=&\frac{1}{3}-\frac{8}{3}x_4-3x_6
+\\x_2&=&\frac{1}{6}+\frac{2}{3}x_4-\frac{5}{2}x_5+\frac{5}{2}x_6
+\\x_3&=&-\frac{1}{8}+\frac{3}{4}x_4-\frac{15}{8}+\frac{3}{4}x_6
+\end{eqnarray*}
+\paragraph{}We can write solution set using above equations and vector notation as
+\[
+\left\{
+\underbrace{
+\begin{pmatrix}
+1/3\\
+1/6\\
+-1/8\\
+0\\
+0\\
+0
+\end{pmatrix}
+}_\text{Particular Solution}
++
+\underbrace{
+\begin{pmatrix}
+-8/3\\
+2/3\\
+3/4\\
+1\\
+0\\
+0
+\end{pmatrix}x_4+
+\begin{pmatrix}
+0\\
+-5/2\\
+-15/8\\
+0\\
+1\\
+0
+\end{pmatrix}x_5
++
+\begin{pmatrix}
+-3\\
+5/2\\
+3/4\\
+0\\
+0\\
+1
+\end{pmatrix}x_6}_\text{Homogeneous Solution}
+| x_4,x_5,x_6 \in C
+\right\}
+\]
+\paragraph{Q3.}For each of the following systems reduce them to Reduced Echelon form representing each elementary operation as matrix multiplication, solve and write the solution in vector form. Identify the homogenous and particular solutions.
+\[
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 1 & 1 \\
+    0 & 0 & 1 & 0 \\
+    1 & -2 & 0 & 0
+\end{array}\right),
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 1 & 0 \\
+    0 & 0 & 1 & 1 \\
+    1 & -2 & 0 & 0
+\end{array}\right),
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 1 & 0 \\
+    0 & 0 & 1 & 0 \\
+    1 & -2 & 0 & 1
+\end{array}\right)
+\]
+\paragraph{Solution 3.}We can write this matrices in Recuced Echelon form as
+\begin{eqnarray*}
+\begin{pmatrix}
+0 & 0 & 1\\
+1 & 0 & 0\\
+0 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+1/4 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1 & -1 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & -1/2 & 1
+\end{pmatrix}
+\\ \mathbf{x}
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+1/2 & 0 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 & -1\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 1 & 1 \\
+    0 & 0 & 1 & 0 \\
+    1 & -2 & 0 & 0
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 1/2 \\
+    0 & 1 & 0 & 1/4 \\
+    0 & 0 & 1 & 0
+\end{array}\right)
+\end{eqnarray*}
+\paragraph{}and we can simplfy this multiplication as
+\begin{eqnarray}
+\begin{pmatrix}
+	1/2 & -1/2 & 1/2\\
+	1/4 & -1/4 & -1/4\\
+	0 & 1 & 0
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 1 & 1 \\
+    0 & 0 & 1 & 0 \\
+    1 & -2 & 0 & 0
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 1/2 \\
+    0 & 1 & 0 & 1/4 \\
+    0 & 0 & 1 & 0
+\end{array}\right)
+\end{eqnarray}
+\paragraph{}We can use this matrix to obtain Reduced Echelon form two other matrix because they have same coefficent matrix and result is
+\begin{eqnarray}
+\begin{pmatrix}
+	1/2 & -1/2 & 1/2\\
+	1/4 & -1/4 & -1/4\\
+	0 & 1 & 0
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 1 & 0 \\
+    0 & 0 & 1 & 1 \\
+    1 & -2 & 0 & 0
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & -1/2 \\
+    0 & 1 & 0 & -1/4 \\
+    0 & 0 & 1 & 1
+\end{array}\right)
+\end{eqnarray}
+
+\paragraph{}and last one is
+\begin{eqnarray}
+\begin{pmatrix}
+	1/2 & -1/2 & 1/2\\
+	1/4 & -1/4 & -1/4\\
+	0 & 1 & 0
+\end{pmatrix}
+\left(\begin{array}{ccc|c}  
+	1 & 2 & 1 & 0 \\
+    0 & 0 & 1 & 0 \\
+    1 & -2 & 0 & 1
+\end{array}\right)
+=
+\left(\begin{array}{ccc|c}  
+	1 & 0 & 0 & 1/2 \\
+    0 & 1 & 0 & -1/4 \\
+    0 & 0 & 1 & 0
+\end{array}\right)
+\end{eqnarray}
+
+\paragraph{}as you can see for each equation system we have only particular solution, first one has
+\begin{eqnarray*}
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1/2\\
+1/4\\
+0
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}second one has
+\begin{eqnarray*}
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1/2\\
+-1/4\\
+1
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}and for last one we have
+\begin{eqnarray*}
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1/2\\
+-1/4\\
+0
+\end{pmatrix}
+\end{eqnarray*}
+
+\paragraph{}In this point I want to point out something, as you can see we have only particular solution for each equations system. If we look carefully we can see that this equations system coefficient matrices is same and this matrix is square matrix.In this point we have a definition
+\paragraph{Definition NM}Suppose A is square matrix.Suppose further that the solution set to the homogeneous linear system of equations LS(A,0) is {0}, in other words the system has only the trivial solution. Then we say that A is a nonsingular matrix.
+\paragraph{Theorem NMUS} Suppose that A is a square matrix.A is a nonsingular matrix if and only if the system LS(A,b) has a unique solution for every choice of the constant vector b.
+\paragraph{}This theorem helps to explain part of our interest in nonsingular matrices. If a matrix is nonsingular, then no matter what vector of constant we pair it with, using the matrix as the coefficent matrix will always yield a linear system of equations with a solution, and solution is unique.(A First Course in Linear Algebra)
+\paragraph{}In this case we have nonsingular matrix and vector of constant isn't important we have always a particular solution for every vector of constant.
+\paragraph{Q4.}Find the inverse of 
+$\begin{pmatrix}
+	1 & 2 & 1\\
+	0 & 0 & 1\\
+	1 & -2 & 0
+\end{pmatrix}$
+
+\paragraph{Soution 4.}
+\begin{eqnarray*}
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & -1/4 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1 & -1/2 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 & -2\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\\ \mathbf{x}
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & -1/4
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+-1 & 0 & 1
+\end{pmatrix}
+\left(\begin{array}{ccc|ccc}  
+	1 & 2 & 1 & 1 & 0 & 0\\
+    0 & 0 & 1 & 0 & 1 & 0\\
+    1 & -2 & 0 & 0 & 0 & 1
+\end{array}\right)
+&=&
+\left(\begin{array}{ccc|ccc}  
+	1 & 0 & 0 & 1/2 & -1/2 & 1/2\\
+    0 & 1 & 0 & 1/4 & -1/4 & -1/4\\
+    0 & 0 & 1 & 0 & 1 & 0
+\end{array}\right)
+\end{eqnarray*}
+\paragraph{}we can write this multiplication as a single multiplication
+\begin{eqnarray*}
+\begin{pmatrix}
+1/2 & -1/2 & 1/2\\
+1/4 & -1/4 & -1/4\\
+0 & 1 & 0
+\end{pmatrix}
+\left(\begin{array}{ccc|ccc}  
+	1 & 2 & 1 & 1 & 0 & 0\\
+    0 & 0 & 1 & 0 & 1 & 0\\
+    1 & -2 & 0 & 0 & 0 & 1
+\end{array}\right)
+=
+\left(\begin{array}{ccc|ccc}  
+	1 & 0 & 0 & 1/2 & -1/2 & 1/2\\
+    0 & 1 & 0 & 1/4 & -1/4 & -1/4\\
+    0 & 0 & 1 & 0 & 1 & 0
+\end{array}\right)
+\end{eqnarray*}
+\paragraph{}at the end we can say that inverse of the matrix is
+\[
+\begin{pmatrix}
+1/2 & -1/2 & 1/2\\
+1/4 & -1/4 & -1/4\\
+0 & 1 & 0
+\end{pmatrix}
+\]
+\paragraph{}because it satisfy $\mathbf{•}{A A^{-1}=I}$
+
+\paragraph{Q5.}Represent
+$
+\begin{pmatrix}
+1 & 2 & 1\\
+0 & 0 & 1\\
+1 & -2 & 1
+\end{pmatrix}
+$ as a product of elementary matrices
+\paragraph{Solution 5.}I want to approach this problem like this we know
+\begin{equation*}
+AA^{-1}=A^{-1}A=I
+\end{equation*}
+\paragraph{}and question ask to represent matrix B as a product of elementary matrices
+\begin{eqnarray*}
+xA&=&B
+\\xAA^{-1}&=&BA^{-1}
+\\xI&=&BA^{-1}
+\\x&=&BA^{-1}
+\end{eqnarray*}
+\paragraph{}In this case B is 
+$
+\begin{pmatrix}
+1 & 2 & 1\\
+0 & 0 & 1\\
+1 & -2 & 1
+\end{pmatrix}
+$
+A is any matrix which is invertible and we find x at the end we represent B as a product of elementary matrices.
+\paragraph{}I want to denote A as 
+$
+\begin{pmatrix}
+5 & 4 & 3\\
+2 & 1 & 0\\
+0 & 1 & 0
+\end{pmatrix}
+$ and in this case 
+\begin{eqnarray*}
+A^{-1}=
+\begin{pmatrix}
+0 & 1/2 & -1/2\\
+0 & 0 & 1\\
+1/3 & -5/6 & -1/2
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}We prepared our ingredients. Let's start to solve
+\begin{eqnarray*}
+xA&=&B
+\\x\ \begin{pmatrix}
+5 & 4 & 3\\
+2 & 1 & 0\\
+0 & 1 & 0
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+1 & 2 & 1\\
+0 & 0 & 1\\
+1 & -2 & 1
+\end{pmatrix}
+\\xAA^{-1}&=&BA^{-1}
+\\x\begin{pmatrix}
+5 & 4 & 3\\
+2 & 1 & 0\\
+0 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+0 & 1/2 & -1/2\\
+0 & 0 & 1\\
+1/3 & -5/6 & -1/2
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+1 & 2 & 1\\
+0 & 0 & 1\\
+1 & -2 & 1
+\end{pmatrix}
+\begin{pmatrix}
+0 & 1/2 & -1/2\\
+0 & 0 & 1\\
+1/3 & -5/6 & -1/2
+\end{pmatrix}
+\\xI&=&BA^{-1}
+\\x
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+1/3 & -1/3 & 1\\
+1/3 & -5/6 & -1/2\\
+0 & 1/2 & -5/2
+\end{pmatrix}
+\\x&=&BA^{-1}
+\\x&=&
+\begin{pmatrix}
+1/3 & -1/3 & 1\\
+1/3 & -5/6 & -1/2\\
+0 & 1/2 & -5/2
+\end{pmatrix}
+\end{eqnarray*}
+\paragraph{}so we find x and we have A matrix this two matrix multiplication give us the B matrix
+\begin{eqnarray*}
+\begin{pmatrix}
+1/3 & -1/3 & 1\\
+1/3 & -5/6 & -1/2\\
+0 & 1/2 & -5/2
+\end{pmatrix}
+\begin{pmatrix}
+5 & 4 & 3\\
+2 & 1 & 0\\
+0 & 1 & 0
+\end{pmatrix}
+&=&
+\begin{pmatrix}
+1 & 2 & 1\\
+0 & 0 & 1\\
+1 & -2 & 1
+\end{pmatrix}
+\end{eqnarray*}
+\end{document}
